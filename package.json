@@ -1,5 +1,5 @@
 {
-  "name": "OnsiteHire",
+  "name": "PokedexGo",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -40,6 +40,7 @@
     "ava": "^0.15.2",
     "babel-core": "^6.10.4",
     "babel-eslint": "6.1.2",
+    "babel-preset-react-native": "^1.9.0",
     "enzyme": "^2.4.1",
     "eslint": "3.1.0",
     "eslint-config-airbnb": "9.0.1",

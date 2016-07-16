@@ -1,5 +1,4 @@
 import mockery from 'mockery'
-
 // inject __DEV__
 global.__DEV__ = true
 
