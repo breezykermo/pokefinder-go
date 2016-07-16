@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import {
   StyleSheet,
   Text,
@@ -6,43 +6,47 @@ import {
 } from 'react-native'
 import { requestSightings } from '../../reducers/pokecrew/actions'
 
-const GeolocationExample = React.createClass({
-  watchID: (null: ?number),
+class GeoLoc extends React.Component {
+  propTypes = {
+    dispatch: PropTypes.func.isRequired,
+  }
 
-  getInitialState: function() {
-    return {
-      initialPosition: 'unknown',
-      lastPosition: 'unknown',
-    };
-  },
+  constructor(props) {
+    super(props)
+    this.watchID = (null: ?number)
+  }
 
-  componentDidMount: function() {
+  state = {
+    initialPosition: 'unknown',
+    lastPosition: 'unknown',
+  }
+
+  componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       position => {
-        var initialPosition = JSON.stringify(position);
-        this.setState({initialPosition});
+        const initialPosition = JSON.stringify(position)
+        this.setState({ initialPosition })
       },
-      error => alert(error.message),
+      error => alert(error.message), // eslint-disable-line no-alert
       {
         enableHighAccuracy: true,
         timeout: 20000,
         maximumAge: 1000,
       }
-    );
+    )
     this.watchID = navigator.geolocation.watchPosition(position => {
-      console.log(position)
-      const lastPosition = JSON.stringify(position);
-      this.setState({lastPosition});
+      const lastPosition = JSON.stringify(position)
+      this.setState({ lastPosition })
       // dispatch action to sagas to handle
       this.props.dispatch(requestSightings())
-    });
-  },
+    })
+  }
 
-  componentWillUnmount: function() {
-    navigator.geolocation.clearWatch(this.watchID);
-  },
+  componentWillUnmount() {
+    navigator.geolocation.clearWatch(this.watchID)
+  }
 
-  render: function() {
+  render() {
     return (
       <View>
         <Text>
@@ -54,14 +58,14 @@ const GeolocationExample = React.createClass({
           {this.state.lastPosition}
         </Text>
       </View>
-    );
+    )
   }
-});
+}
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   title: {
     fontWeight: '500',
   },
-});
+})
 
-export default GeolocationExample
+export default GeoLoc
