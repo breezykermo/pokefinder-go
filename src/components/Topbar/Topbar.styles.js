@@ -6,7 +6,7 @@ export default {
   container: {
     position: 'absolute',
     top: 0,
-    height: 80,
+    height: 70,
     width: screenWidth,
     backgroundColor: 'rgba(85, 207, 179, 0.6)',
     justifyContent: 'center',
