@@ -4,11 +4,13 @@ import {
 } from 'react-native'
 import styles from './App.styles.js'
 import Topbar from '../components/Topbar'
-import GeoLoc from '../components/GeoLoc'
+import BottomBar from '../components/BottomBar'
+import Pokedex from '../components/Pokedex'
 
 export default () => (
   <View style={styles.container}>
     <Topbar />
-    <GeoLoc />
+    <Pokedex />
+    <BottomBar />
   </View>
 )

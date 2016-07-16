@@ -1,8 +1,7 @@
 dependencies: \
-  /Users/lachlankermode/hackathon/react-native-redux-boiler/node_modules/react-native/Libraries/Network/RCTFileRequestHandler.m \
-  /Users/lachlankermode/hackathon/react-native-redux-boiler/node_modules/react-native/Libraries/Network/RCTFileRequestHandler.h \
+  /Users/andrew_hunt/Documents/hack/atandt/pokedex-go/node_modules/react-native/Libraries/Network/RCTFileRequestHandler.m \
+  /Users/andrew_hunt/Documents/hack/atandt/pokedex-go/node_modules/react-native/Libraries/Network/RCTFileRequestHandler.h \
   ../../React/Base/RCTURLRequestHandler.h \
   ../../React/Base/RCTBridgeModule.h ../../React/Base/RCTDefines.h \
   ../../React/Base/RCTURLRequestDelegate.h \
-  ../../React/Base/RCTInvalidating.h ../../React/Base/RCTUtils.h \
-  ../../React/Base/RCTAssert.h
+  ../../React/Base/RCTInvalidating.h ../../React/Base/RCTUtils.h

@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/lachlankermode/hackathon/pokedex-go/node_modules/react-native/Libraries/LinkingIOS/RCTLinkingManager.m \
-  /Users/lachlankermode/hackathon/pokedex-go/node_modules/react-native/Libraries/LinkingIOS/RCTLinkingManager.h \
+  /Users/andrew_hunt/Documents/hack/atandt/pokedex-go/node_modules/react-native/Libraries/LinkingIOS/RCTLinkingManager.m \
+  /Users/andrew_hunt/Documents/hack/atandt/pokedex-go/node_modules/react-native/Libraries/LinkingIOS/RCTLinkingManager.h \
   ../../React/Modules/RCTEventEmitter.h ../../React/Base/RCTBridge.h \
   ../../React/Base/RCTBridgeDelegate.h \
   ../../React/Base/RCTBridgeModule.h ../../React/Base/RCTDefines.h \
