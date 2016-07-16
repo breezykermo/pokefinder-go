@@ -1,0 +1,1 @@
+export { checkPokemon } from './checkPokemon'

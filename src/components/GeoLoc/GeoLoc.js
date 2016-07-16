@@ -17,15 +17,20 @@ const GeolocationExample = React.createClass({
 
   componentDidMount: function() {
     navigator.geolocation.getCurrentPosition(
-      (position) => {
+      position => {
         var initialPosition = JSON.stringify(position);
         this.setState({initialPosition});
       },
-      (error) => alert(error.message),
-      {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
+      error => alert(error.message),
+      {
+        enableHighAccuracy: true,
+        timeout: 20000,
+        maximumAge: 1000,
+      }
     );
-    this.watchID = navigator.geolocation.watchPosition((position) => {
-      var lastPosition = JSON.stringify(position);
+    this.watchID = navigator.geolocation.watchPosition(position => {
+      console.log(position)
+      const lastPosition = JSON.stringify(position);
       this.setState({lastPosition});
     });
   },
