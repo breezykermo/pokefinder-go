@@ -4,6 +4,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import { requestSightings } from '../../reducers/pokecrew/actions'
 
 const GeolocationExample = React.createClass({
   watchID: (null: ?number),
@@ -32,6 +33,8 @@ const GeolocationExample = React.createClass({
       console.log(position)
       const lastPosition = JSON.stringify(position);
       this.setState({lastPosition});
+      // dispatch action to sagas to handle
+      dispatch(requestSightings())
     });
   },
 
