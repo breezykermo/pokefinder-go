@@ -15,7 +15,7 @@ class Topbar extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>PokedexGo</Text>
+        <Text style={styles.text}>{I18n.t('headerText')}</Text>
         <SearchBar
           ref="searchBar"
           placeholder={I18n.t('searchMessage')}

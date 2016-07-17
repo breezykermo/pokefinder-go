@@ -1,3 +1,3 @@
 export default {
-  STATUS_BAR_PADDING: 28.3,
+  STATUS_BAR_PADDING: 28,
 }
