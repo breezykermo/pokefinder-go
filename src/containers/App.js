@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import {
   View,
+  NativeModules,
 } from 'react-native'
 import { connect } from 'react-redux'
 import styles from './App.styles.js'
@@ -11,12 +12,16 @@ import BottomBar from '../components/BottomBar'
        and updates to the pokemon filtered are sent through a bridge (not
        yet implemented). There is therefore no GeoLoc component. */
 
-const App = ({ dispatch }) => ( // eslint-disable-line no-unused-vars
-  <View style={styles.container}>
-    <Topbar />
-    <BottomBar />
-  </View>
-)
+const App = ({ dispatch }) => { // eslint-disable-line no-unused-vars
+  const { PokeMonitor } = NativeModules
+  PokeMonitor.addEvent('Birthday Party', '4 Privet Drive, Surrey')
+  return (
+    <View style={styles.container}>
+      <Topbar />
+      <BottomBar />
+    </View>
+  )
+}
 App.propTypes = {
   dispatch: PropTypes.func.isRequired,
 }
