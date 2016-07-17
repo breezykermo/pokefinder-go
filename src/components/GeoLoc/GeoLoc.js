@@ -5,8 +5,9 @@ import {
   Text,
   View,
 } from 'react-native'
-import CONFIG from './config'
+import config from './config'
 import BackgroundGeolocation from 'react-native-background-geolocation'
+import PushNotification from 'react-native-push-notification'
 import { diffLocationRequest } from '../../reducers/location/actions'
 
 class GeoLoc extends React.Component {
@@ -16,14 +17,16 @@ class GeoLoc extends React.Component {
 
   constructor(props) {
     super(props)
+    /* Background Geolocation */
     this.bgGeo = BackgroundGeolocation
-    this.bgGeo.configure(CONFIG, state => {
+    this.bgGeo.configure(config.bgGeo, state => {
       console.log('- Configure success.  Current state: ', state) // eslint-disable-line no-console
     })
-
     AppState.addEventListener('change', this.onAppStateChange.bind(this))
     this.bgGeo.on('location', this.onBackgroundLocationChange.bind(this))
     this.bgGeo.on('error', error => console.log(error))
+    /* PushNotifications */
+    PushNotification.configure(config.pushNotification)
   }
 
   state = {
