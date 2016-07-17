@@ -1,6 +1,6 @@
-export const UPDATE_LOCATION = 'UPDATE_LOCATION'
-export const updateLocation = (location) => ({
-  type: UPDATE_LOCATION,
+export const DIFF_LOCATION_REQUEST = 'DIFF_LOCATION_REQUEST'
+export const diffLocationRequest = (location) => ({
+  type: DIFF_LOCATION_REQUEST,
   location,
 })
 

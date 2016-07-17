@@ -12,5 +12,5 @@ function* diffLocation(action) {
 }
 
 export function* location() {
-  yield* takeLatest(loc.UPDATE_LOCATION, diffLocation)
+  yield* takeLatest(loc.DIFF_LOCATION_REQUEST, diffLocation)
 }
