@@ -8,10 +8,20 @@
 
 #import "PokeMonitor.h"
 #import "RCTLog.h"
+#import <CoreLocation/CoreLocation.h>
+
+@interface PokeMonitor ()
+@property (strong, nonatomic) CLLocationManager*locationManager;
+@end
 
 @implementation PokeMonitor
 
 RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(requestLocation)
+{
+  [self.locationManager requestAlwaysAuthorization];
+}
 
 RCT_EXPORT_METHOD(addEvent:(NSString *)name location:(NSString *)location)
 {

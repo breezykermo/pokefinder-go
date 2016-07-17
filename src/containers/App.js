@@ -24,6 +24,7 @@ const App = ({ dispatch }) => { // eslint-disable-line no-unused-vars
 }
 App.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  style: View.propTypes.style.isRequired,
 }
 
 export default connect(() => ({}))(App)
