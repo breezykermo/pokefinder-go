@@ -1,4 +1,5 @@
 import { Dimensions } from 'react-native'
+import { colors } from '../../common/constants'
 
 const screenWidth = Dimensions.get('window').width
 
@@ -9,7 +10,7 @@ export default {
     height: 70,
     height: 100,
     width: screenWidth,
-    backgroundColor: '#ea2225',
+    backgroundColor: colors.ONE,
     justifyContent: 'center',
     alignItems: 'center',
   },
