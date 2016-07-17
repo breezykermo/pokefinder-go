@@ -8,7 +8,6 @@ export default {
     paddingTop: 28,
     borderBottomWidth: 2,
     borderBottomColor: colors.DARK_EMPHASIS,
-    marginBottom: 15,
   },
   text: text.header,
 }
