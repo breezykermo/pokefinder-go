@@ -5,9 +5,9 @@ export default {
   innerContainer: {
     flexDirection: 'row',
     margin: 15,
-    paddingBottom: 10,
     borderBottomWidth: 1.5,
     borderBottomColor: colors.LIGHT_BLACK,
+    paddingBottom: 12,
   },
   leftText: [text.detailHeaderLeft, { flex: 1 }],
   rightText: [text.detailHeaderRight, { flex: 1 }],
