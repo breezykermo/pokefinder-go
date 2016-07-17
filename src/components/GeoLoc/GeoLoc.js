@@ -1,61 +1,61 @@
 import React, { PropTypes } from 'react'
 import {
+  AppStateIOS,
   StyleSheet,
   Text,
   View,
 } from 'react-native'
-import { requestSightings } from '../../reducers/pokecrew/actions'
+import CONFIG from './config'
+import BackgroundGeolocation from 'react-native-background-geolocation'
+// import { requestSightings } from '../../reducers/pokecrew/actions'
 
 class GeoLoc extends React.Component {
-  propTypes = {
+  static propTypes = {
     dispatch: PropTypes.func.isRequired,
   }
 
   constructor(props) {
     super(props)
-    this.watchID = (null: ?number)
+    this.bgGeo = BackgroundGeolocation
+    this.bgGeo.configure(CONFIG, state => {
+      console.log('- Configure success.  Current state: ', state) // eslint-disable-line no-console
+    })
+
+    AppStateIOS.addEventListener('change', this.onAppStateChange.bind(this))
+    this.bgGeo.on('location', this.onBackgroundLocationChange.bind(this))
   }
 
   state = {
-    initialPosition: 'unknown',
-    lastPosition: 'unknown',
+    position: 'unknown',
   }
 
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition(
-      position => {
-        const initialPosition = JSON.stringify(position)
-        this.setState({ initialPosition })
-      },
-      error => alert(error.message), // eslint-disable-line no-alert
-      {
-        enableHighAccuracy: true,
-        timeout: 20000,
-        maximumAge: 1000,
-      }
-    )
-    this.watchID = navigator.geolocation.watchPosition(position => {
-      const lastPosition = JSON.stringify(position)
-      this.setState({ lastPosition })
-      // dispatch action to sagas to handle
-      this.props.dispatch(requestSightings())
+    const me = this
+    this.bgGeo.getCurrentPosition(location => {
+      me.setState({
+        position: JSON.stringify(location),
+      })
     })
   }
 
-  componentWillUnmount() {
-    navigator.geolocation.clearWatch(this.watchID)
+  onAppStateChange(state) {
+    // state is one of ['active', 'inactive', 'background']
+    console.log(state) // eslint-disable-line no-console
+  }
+
+  onBackgroundLocationChange(location) {
+    console.log(location) // eslint-disable-line no-console
+    this.setState({
+      position: location,
+    })
   }
 
   render() {
     return (
       <View>
         <Text>
-          <Text style={styles.title}>Initial position: </Text>
-          {this.state.initialPosition}
-        </Text>
-        <Text>
           <Text style={styles.title}>Current position: </Text>
-          {this.state.lastPosition}
+          {JSON.stringify(this.state.position.coords)}
         </Text>
       </View>
     )
