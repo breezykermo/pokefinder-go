@@ -7,7 +7,7 @@ import {
 } from 'react-native'
 import CONFIG from './config'
 import BackgroundGeolocation from 'react-native-background-geolocation'
-// import { requestSightings } from '../../reducers/pokecrew/actions'
+import { updateLocation } from '../../reducers/location/actions'
 
 class GeoLoc extends React.Component {
   static propTypes = {
@@ -45,10 +45,11 @@ class GeoLoc extends React.Component {
   }
 
   onBackgroundLocationChange(location) {
-    console.log(location) // eslint-disable-line no-console
+    console.log('location event triggered:', location) // eslint-disable-line no-console
     this.setState({
       position: location,
     })
+    this.props.dispatch(updateLocation(location))
   }
 
   render() {
