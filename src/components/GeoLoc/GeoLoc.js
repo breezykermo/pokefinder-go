@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react'
 import {
   AppState,
-  StyleSheet,
-  Text,
   View,
 } from 'react-native'
 import config from './config'
@@ -57,20 +55,9 @@ class GeoLoc extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text>
-          <Text style={styles.title}>Current position: </Text>
-          {JSON.stringify(this.state.position.coords)}
-        </Text>
-      </View>
+      <View />
     )
   }
 }
-
-const styles = StyleSheet.create({
-  title: {
-    fontWeight: '500',
-  },
-})
 
 export default GeoLoc
