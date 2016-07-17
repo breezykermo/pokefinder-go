@@ -1,13 +1,19 @@
 import React, { PropTypes } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
+import styles from './Pokemon.styles'
 
-const Pokemon = () => (
-  <View>
-    <Text>I am a pokemon</Text>
+const Pokemon = ({ data }) => (
+  <View style={styles.container}>
+    <Text style={styles.number}>{data.number}</Text>
+    <Image
+      style={styles.image}
+      source={data.image}
+    />
+    <Text style={styles.name}>{data.name}</Text>
   </View>
 )
 Pokemon.propTypes = {
-  type: PropTypes.string,
+  data: PropTypes.object.isRequired,
 }
 
 export default Pokemon

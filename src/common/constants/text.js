@@ -27,4 +27,12 @@ export default {
     letterSpacing: -0.1,
     textAlign: 'right',
   },
+  pokemonName: {
+    color: colors.BLACK,
+    fontFamily: 'System',
+    fontWeight: 'normal',
+    fontSize: 13,
+    lineHeight: 16,
+    letterSpacing: 0.1,
+  },
 }

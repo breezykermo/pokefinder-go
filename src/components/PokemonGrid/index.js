@@ -3,6 +3,7 @@ import GridView from 'react-native-grid-view'
 import styles from './PokemonGrid.styles'
 import { POKEMON_PER_ROW } from '../../common/constants'
 import Pokemon from './components/Pokemon'
+import pokemonData from '../../assets/pokemonData'
 
 class PokemonGrid extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class PokemonGrid extends React.Component {
   }
 
   state = {
-    dataSource: [],
+    dataSource: Object.keys(pokemonData).map(key => pokemonData[key]),
   }
 
   componentDidMount() {
