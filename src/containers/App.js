@@ -4,15 +4,18 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 import styles from './App.styles.js'
+
+import GeoLoc from '../components/GeoLoc'
 import Topbar from '../components/Topbar'
 import BodyHeader from '../components/BodyHeader'
-import GeoLoc from '../components/GeoLoc'
+import PokemonGrid from '../components/PokemonGrid'
 
 const App = ({ dispatch }) => (
   <View style={styles.container}>
     <GeoLoc dispatch={dispatch} />
     <Topbar />
-    <BodyHeader />
+    <BodyHeader watchlistCount={2} />
+    <PokemonGrid />
   </View>
 )
 App.propTypes = {
