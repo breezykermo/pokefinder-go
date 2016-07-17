@@ -1,15 +1,35 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import GridView from 'react-native-grid-view'
+import styles from './PokemonGrid.styles'
+import { POKEMON_PER_ROW } from '../../common/constants'
+import Pokemon from './components/Pokemon'
 
 class PokemonGrid extends React.Component {
-  componentDidMount() {
-    console.log('componentDidMount') // eslint-disable-line no-console
+  constructor(props) {
+    super(props)
+    this.renderItem.bind(this)
   }
+
+  state = {
+    dataSource: [],
+  }
+
+  componentDidMount() {
+    // TODO: load pokemon data from local file... could just be static.
+  }
+
+  renderItem(itemProps) {
+    return <Pokemon data={itemProps} />
+  }
+
   render() {
     return (
-      <View>
-        <Text>PokemonGrid</Text>
-      </View>
+      <GridView
+        style={styles.container}
+        items={this.state.dataSource}
+        itemsPerRow={POKEMON_PER_ROW}
+        renderItem={this.renderItem}
+      />
     )
   }
 }

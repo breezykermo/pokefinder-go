@@ -12,7 +12,7 @@ export default {
   detailHeaderLeft: {
     color: colors.LIGHT_BLACK,
     fontFamily: 'System',
-    fontWeight: '500',
+    fontWeight: '600',
     fontSize: 22,
     lineHeight: 36,
     letterSpacing: -0.13,
