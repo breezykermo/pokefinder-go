@@ -44,4 +44,64 @@ export default {
     name: 'Squirtle',
     image: require('./squirtle.png'),
   },
+  10: {
+    number: 10,
+    name: 'Squirtle',
+    image: require('./squirtle.png'),
+  },
+  11: {
+    number: 11,
+    name: 'Charmander',
+    image: require('./charmander.png'),
+  },
+  12: {
+    number: 12,
+    name: 'Bulbasaur',
+    image: require('./bulbasaur.png'),
+  },
+  13: {
+    number: 13,
+    name: 'Squirtle',
+    image: require('./squirtle.png'),
+  },
+  14: {
+    number: 14,
+    name: 'Bulbasaur',
+    image: require('./bulbasaur.png'),
+  },
+  15: {
+    number: 15,
+    name: 'Squirtle',
+    image: require('./squirtle.png'),
+  },
+  16: {
+    number: 16,
+    name: 'Squirtle',
+    image: require('./squirtle.png'),
+  },
+  17: {
+    number: 17,
+    name: 'Charmander',
+    image: require('./charmander.png'),
+  },
+  18: {
+    number: 18,
+    name: 'Bulbasaur',
+    image: require('./bulbasaur.png'),
+  },
+  19: {
+    number: 19,
+    name: 'Squirtle',
+    image: require('./squirtle.png'),
+  },
+  20: {
+    number: 20,
+    name: 'Charmander',
+    image: require('./charmander.png'),
+  },
+  21: {
+    number: 21,
+    name: 'Bulbasaur',
+    image: require('./bulbasaur.png'),
+  },
 }

@@ -5,6 +5,7 @@ export default {
   innerContainer: {
     flexDirection: 'row',
     margin: 15,
+    marginBottom: 0,
     borderBottomWidth: 1.5,
     borderBottomColor: colors.LIGHT_BLACK,
     paddingBottom: 12,
