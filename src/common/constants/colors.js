@@ -4,6 +4,7 @@ export default {
   BLACK: 'rgba(0, 0, 0, 1)',
   WHITE: 'rgba(255, 255, 255, 1)',
   EMPHASIS: 'rgba(34, 34, 34, 1)',
+  LIGHT_BLACK: 'rgba(34, 34, 34, 1)',
   LIGHT_EMPHASIS: 'rgba(34, 34, 34, 0.35)',
   DARK_EMPHASIS: 'rgba(17, 0, 1, 0.17)',
   BACKGROUND: 'rgba(233, 233, 233, 1)',

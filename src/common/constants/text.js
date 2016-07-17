@@ -10,7 +10,7 @@ export default {
     color: colors.WHITE,
   },
   detailHeaderLeft: {
-    color: colors.BLACK,
+    color: colors.LIGHT_BLACK,
     fontFamily: 'System',
     fontWeight: '500',
     fontSize: 22,
