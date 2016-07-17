@@ -6,12 +6,14 @@ import { connect } from 'react-redux'
 import styles from './App.styles.js'
 import Topbar from '../components/Topbar'
 import BottomBar from '../components/BottomBar'
-import GeoLoc from '../components/GeoLoc'
 
-const App = ({ dispatch }) => (
+/* NB: Using native geolocation, handlers are established on app startup,
+       and updates to the pokemon filtered are sent through a bridge (not
+       yet implemented). There is therefore no GeoLoc component. */
+
+const App = ({ dispatch }) => ( // eslint-disable-line no-unused-vars
   <View style={styles.container}>
     <Topbar />
-    <GeoLoc dispatch={dispatch} />
     <BottomBar />
   </View>
 )

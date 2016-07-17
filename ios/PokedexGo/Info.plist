@@ -36,7 +36,7 @@
 	<key>NSLocationAlwaysUseDescription</key>
 	<string>In order to function properly, PokedexGo requires your location in the background</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>In order to function properly, PokedexGo requires your location in the background</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
