@@ -2,7 +2,7 @@
 
 export default {
   /* The minimum distance a device moves before update occurs. Increases elastically with speed. */
-  distanceFilter: 1,
+  distanceFilter: 5,
   /* Higher power means higher accuracy, but also greater battery drain. */
   desiredAccuracy: 1000,
   /* This is the minimum distance the device must move beyond the stationary location for

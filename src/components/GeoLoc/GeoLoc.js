@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import {
-  AppStateIOS,
+  AppState,
   StyleSheet,
   Text,
   View,
@@ -21,8 +21,9 @@ class GeoLoc extends React.Component {
       console.log('- Configure success.  Current state: ', state) // eslint-disable-line no-console
     })
 
-    AppStateIOS.addEventListener('change', this.onAppStateChange.bind(this))
+    AppState.addEventListener('change', this.onAppStateChange.bind(this))
     this.bgGeo.on('location', this.onBackgroundLocationChange.bind(this))
+    this.bgGeo.on('error', error => console.log(error))
   }
 
   state = {
