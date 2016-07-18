@@ -9,6 +9,11 @@ import pokemonData from '../../assets/pokemonData'
 class PokemonGrid extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
+    pokemonData: PropTypes.arrayOf(PropTypes.shape({
+      number: PropTypes.number,
+      name: PropTypes.string,
+      image: PropTypes.any,
+    })),
   }
 
   constructor(props) {
@@ -18,10 +23,6 @@ class PokemonGrid extends React.Component {
 
   state = {
     dataSource: Object.keys(pokemonData).map(key => pokemonData[key]),
-  }
-
-  componentDidMount() {
-    // TODO: load pokemon data from local file... could just be static.
   }
 
   renderItem(pokeProps, key) {
@@ -36,7 +37,7 @@ class PokemonGrid extends React.Component {
     return (
       <GridView
         style={styles.container}
-        items={this.state.dataSource}
+        items={this.props.pokemonData}
         itemsPerRow={POKEMON_PER_ROW}
         renderItem={props => this.renderItem(props)}
       />
