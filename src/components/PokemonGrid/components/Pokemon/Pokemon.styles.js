@@ -11,6 +11,22 @@ export default {
     borderRadius: 2,
     margin: 3,
   },
+  containerWatched: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.LIGHT_GREEN,
+    borderColor: colors.GREEN,
+    borderWidth: 2,
+    borderRadius: 2,
+    margin: 3,
+  },
+  cornerTop: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    width: 16,
+  },
   number: [text.pokemonName, {
     position: 'absolute',
     top: 7,

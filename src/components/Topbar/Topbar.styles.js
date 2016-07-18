@@ -4,7 +4,7 @@ export default {
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.ONE,
+    backgroundColor: colors.RED,
     paddingTop: 28,
     borderBottomWidth: 2,
     borderBottomColor: colors.DARK_EMPHASIS,

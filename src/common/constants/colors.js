@@ -1,6 +1,7 @@
 export default {
-  ONE: 'rgba(179, 13, 8, 1)',
-  TWO: 'rgba(26, 179, 8, 1)',
+  RED: 'rgba(179, 13, 8, 1)',
+  LIGHT_GREEN: 'rgba(225, 241, 223, 1)',
+  GREEN: 'rgba(26, 179, 8, 1)',
   BLACK: 'rgba(0, 0, 0, 1)',
   WHITE: 'rgba(255, 255, 255, 1)',
   SMOKE: 'rgba(248, 248, 248, 1)',

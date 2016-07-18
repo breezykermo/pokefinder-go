@@ -4,8 +4,7 @@ import styles from './Pokemon.styles'
 
 const Pokemon = ({ data, onPressHandler }) => (
   <TouchableOpacity
-    key={data.number}
-    style={styles.container}
+    style={data.watched ? styles.containerWatched : styles.container}
     onPress={onPressHandler}
   >
     <Text style={styles.number}>{data.number}</Text>
