@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
-import pokemon from './pokemon'
+import location from './location'
+import user from './user'
 
 export default combineReducers({
-  pokemon,
+  location,
+  user,
 })

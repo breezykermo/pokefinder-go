@@ -11,11 +11,12 @@ export default {
     borderRadius: 2,
     margin: 3,
   },
-  number: {
+  number: [text.pokemonName, {
     position: 'absolute',
     top: 7,
     left: 11,
-  },
+    opacity: 0.4,
+  }],
   image: {
     marginTop: 18,
     marginLeft: 29,

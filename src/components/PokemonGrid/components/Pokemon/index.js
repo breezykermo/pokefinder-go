@@ -1,19 +1,24 @@
 import React, { PropTypes } from 'react'
-import { View, Text, Image } from 'react-native'
+import { Text, Image, TouchableOpacity } from 'react-native'
 import styles from './Pokemon.styles'
 
-const Pokemon = ({ data }) => (
-  <View style={styles.container}>
+const Pokemon = ({ data, onPressHandler }) => (
+  <TouchableOpacity
+    key={data.number}
+    style={styles.container}
+    onPress={onPressHandler}
+  >
     <Text style={styles.number}>{data.number}</Text>
     <Image
       style={styles.image}
       source={data.image}
     />
     <Text style={styles.name}>{data.name}</Text>
-  </View>
+  </TouchableOpacity>
 )
 Pokemon.propTypes = {
   data: PropTypes.object.isRequired,
+  onPressHandler: PropTypes.func.isRequired,
 }
 
 export default Pokemon
