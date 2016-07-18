@@ -39,7 +39,7 @@ class PokemonGrid extends React.Component {
         style={styles.container}
         items={this.props.pokemonData}
         itemsPerRow={POKEMON_PER_ROW}
-        renderItem={props => this.renderItem(props)}
+        renderItem={(props, key) => this.renderItem(props, key)}
       />
     )
   }

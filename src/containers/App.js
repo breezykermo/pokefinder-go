@@ -4,11 +4,11 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 import styles from './App.styles.js'
-
 import GeoLoc from '../components/GeoLoc'
 import Topbar from '../components/Topbar'
 import BodyHeader from '../components/BodyHeader'
 import PokemonGrid from '../components/PokemonGrid'
+import { getWatched } from '../utils'
 
 class App extends React.Component {
   static propTypes = {
@@ -29,7 +29,7 @@ class App extends React.Component {
         <Topbar />
         <BodyHeader watchlistCount={user.watchlist.count || 0} />
         <PokemonGrid
-          pokemonData={Object.keys(pokemon.data).map(key => pokemon.data[key]) || []}
+          pokemonData={getWatched(pokemon.data, user.watchlist)}
           dispatch={dispatch}
         />
       </View>

@@ -1,5 +1,3 @@
-const checkPokemon = () => {
+export const checkPokemon = () => {
   return true
 }
-
-export checkPokemon
