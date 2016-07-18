@@ -19,7 +19,7 @@ export default {
     borderColor: colors.GREEN,
     borderWidth: 2,
     borderRadius: 2,
-    margin: 3,
+    margin: 2,
   },
   cornerTop: {
     position: 'absolute',
