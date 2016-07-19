@@ -5,6 +5,7 @@ import * as locationActions from './location/actions'
 import * as userActions from './user/actions'
 
 import localStorage from '../api/local'
+import remote from '../api/remote'
 
 function* diffLocation(action) {
   try {
@@ -52,12 +53,27 @@ function* loadUser() {
   }
 }
 
+function* fetchPokemon() {
+  try {
+    const data = yield remote.fetch(37.78738059991135, 122.39927037277221)
+    console.log(data)
+  } catch (e) {
+    console.log(`error: ${e}`)
+  }
+}
+
+function* testApi() {
+  yield *takeLatest(userActions.WATCHLIST_SAVED, fetchPokemon)
+}
+
 
 function* watchUser() {
   yield *takeLatest(userActions.LOAD_USER, loadUser)
 }
 
 export default function* root() {
+  yield fork(testApi)
+
   yield fork(watchUser)
   yield fork(watchWatchlist)
   yield fork(watchLocation)
