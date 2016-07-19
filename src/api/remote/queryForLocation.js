@@ -8,9 +8,8 @@ export default (x, y) => {
   const swLoc = boundingCoordinates[0]
   const neLoc = boundingCoordinates[1]
   return Promise.resolve()
-    .then(() => {
-      console.log('about to fetch...')
-      return fetch(`${CORE_API}?center_latitude=${loc.latitude()}
+    .then(() => (
+      fetch(`${CORE_API}?center_latitude=${loc.latitude()}
                                 &center_longitude=${loc.longitude()}
                                 &southwest_latitude=${swLoc.latitude()}
                                 &southwest_longitude=${swLoc.longitude()}
@@ -18,13 +17,6 @@ export default (x, y) => {
                                 &northeast_longitude=${neLoc.longitude()}
                                 &minimal=true
                                 &pokemon_id=`)
-      // return fetch('https://jsonplaceholder.typicode.com/posts/1')
-    }).then(response => {
-      return response.json()
-    })
+    )).then(response => response.json())
     .then(json => json)
-    .catch(e => {
-      console.log(e.message)
-      return e
-    })
 }
