@@ -4,7 +4,6 @@ import styles from './PokemonGrid.styles'
 import { POKEMON_PER_ROW } from '../../common/constants'
 import { togglePokemon } from '../.././reducers/user/actions'
 import Pokemon from './components/Pokemon'
-import pokemonData from '../../assets/pokemonData'
 
 class PokemonGrid extends React.Component {
   static propTypes = {
@@ -19,10 +18,6 @@ class PokemonGrid extends React.Component {
   constructor(props) {
     super(props)
     this.renderItem.bind(this)
-  }
-
-  state = {
-    dataSource: Object.keys(pokemonData).map(key => pokemonData[key]),
   }
 
   renderItem(pokeProps, key) {

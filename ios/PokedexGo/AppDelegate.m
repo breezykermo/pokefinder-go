@@ -12,6 +12,7 @@
 #import "RCTBundleURLProvider.h"
 #import "RCTRootView.h"
 #import "RCTPushNotificationManager.h"
+#import "CodePush.h"
 
 @implementation AppDelegate
 
@@ -20,8 +21,13 @@
   NSURL *jsCodeLocation;
 
   [[RCTBundleURLProvider sharedSettings] setDefaults];
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+//  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 //  jsCodeLocation = [NSURL URLWithString:@"http://4.16.192.78:8081/index.ios.bundle"];
+#ifdef DEBUG
+  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+#else
+  jsCodeLocation = [CodePush bundleURL];
+#endif
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"PokedexGo"
