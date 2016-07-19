@@ -1,16 +1,64 @@
 import { takeEvery, takeLatest } from 'redux-saga' // eslint-disable-line no-unused-vars
-import { call, put } from 'redux-saga/effects' // eslint-disable-line no-unused-vars
-import * as loc from './location/actions'
+import { fork, call, put, select } from 'redux-saga/effects' // eslint-disable-line no-unused-vars
+
+import * as locationActions from './location/actions'
+import * as userActions from './user/actions'
+
+import localStorage from '../api/local'
 
 function* diffLocation(action) {
   try {
     console.log(action) // eslint-disable-line no-console
-    yield put(loc.diffLocationSuccess())
+    yield put(locationActions.diffLocationSuccess())
   } catch (e) {
-    yield put(loc.diffLocationFailure(e.message))
+    yield put(locationActions.diffLocationFailure(e.message))
   }
 }
 
-export function* location() {
-  yield* takeLatest(loc.DIFF_LOCATION_REQUEST, diffLocation)
+function* watchLocation() {
+  yield* takeLatest(locationActions.DIFF_LOCATION_REQUEST, diffLocation)
+}
+
+
+function* saveWatchlist() {
+  try {
+    // NB: select pulls state AFTER action has been handled by reducer
+    const watchlist = yield select(state => state.user.get('watchlist'))
+    yield localStorage.watchlist.set(watchlist)
+    const savedWatchlist = yield localStorage.watchlist.get()
+    yield put(userActions.watchlistSaved(savedWatchlist))
+  } catch (e) {
+    // TODO: log error
+    console.log(`error: ${e.message}`) // eslint-disable-line no-console
+  }
+}
+
+function* watchWatchlist() {
+  yield* takeLatest(userActions.TOGGLE_POKEMON, saveWatchlist)
+}
+
+function* loadUser() {
+  try {
+    const savedWatchlist = yield localStorage.watchlist.get()
+    if (savedWatchlist) {
+      yield put(userActions.updateWatchlist(savedWatchlist))
+    }
+    else {
+      console.log('No saved watchlist')
+    }
+  } catch (e) {
+    // TODO: log error
+    console.log(`error: ${e.message}`)
+  }
+}
+
+
+function* watchUser() {
+  yield *takeLatest(userActions.LOAD_USER, loadUser)
+}
+
+export default function* root() {
+  yield fork(watchUser)
+  yield fork(watchWatchlist)
+  yield fork(watchLocation)
 }

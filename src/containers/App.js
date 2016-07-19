@@ -4,7 +4,7 @@ import {
 } from 'react-native'
 import codePush from 'react-native-code-push'
 import { connect } from 'react-redux'
-import { updateSearch } from '../reducers/user/actions'
+import { updateSearch, loadUser } from '../reducers/user/actions'
 import styles from './App.styles.js'
 import GeoLoc from '../components/GeoLoc'
 import Topbar from '../components/Topbar'
@@ -30,6 +30,7 @@ class App extends React.Component {
 
   componentDidMount() {
     codePush.sync()
+    this.props.dispatch(loadUser())
   }
 
   onSearchHandler(text) {
