@@ -12,8 +12,17 @@ class Topbar extends React.Component {
   static propTypes = {
     onChangeTextHandler: PropTypes.func.isRequired,
   }
-  componentDidMount() {
-    this.refs.searchBar.focus()
+
+  constructor(props) {
+    super(props)
+    this.onChangeText = this.onChangeText.bind(this)
+  }
+
+  onChangeText(text) {
+    if (text < 1) {
+      this.refs.searchBar.unFocus()
+    }
+    this.props.onChangeTextHandler(text)
   }
 
   render() {
@@ -23,7 +32,7 @@ class Topbar extends React.Component {
         <Text style={styles.text}>{I18n.t('headerText')}</Text>
         <View style={styles.searchbar}>
           <SearchBar
-            onChangeText={this.props.onChangeTextHandler}
+            onChangeText={this.onChangeText}
             textFieldBackgroundColor="rgba(255,255,255,0.18)"
             barStyle="default"
             searchBarStyle="minimal"
