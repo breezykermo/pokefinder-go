@@ -1,4 +1,4 @@
-export const updatedWatchlist = (state, action) => {
+export const updateWatchlistByToggle = (state, action) => {
   const pokeNo = action.id - 1
   const watchlist = state.get('watchlist')
   let newState
@@ -8,6 +8,5 @@ export const updatedWatchlist = (state, action) => {
   } else {
     newState = state.set('watchlist', watchlist.push(pokeNo))
   }
-  console.log(newState.toJS())
   return newState.get('watchlist')
 }

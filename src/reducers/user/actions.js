@@ -15,3 +15,14 @@ export const updateWatchlist = (watchlist) => ({
   type: UPDATE_WATCHLIST,
   watchlist,
 })
+
+export const WATCHLIST_SAVED = 'WATCHLIST_SAVED'
+export const watchlistSaved = (watchlist) => ({
+  type: WATCHLIST_SAVED,
+  watchlist,
+})
+
+export const LOAD_USER = 'LOAD_USER'
+export const loadUser = () => ({
+  type: LOAD_USER,
+})

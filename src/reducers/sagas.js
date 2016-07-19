@@ -20,24 +20,45 @@ function* watchLocation() {
 }
 
 
-function* localStoreWatched(action) {
+function* saveWatchlist() {
   try {
     // NB: select pulls state AFTER action has been handled by reducer
     const watchlist = yield select(state => state.user.get('watchlist'))
     yield localStorage.watchlist.set(watchlist)
     const savedWatchlist = yield localStorage.watchlist.get()
-    console.log(savedWatchlist)
-    yield put(userActions.updateWatchlist(savedWatchlist))
+    yield put(userActions.watchlistSaved(savedWatchlist))
   } catch (e) {
-    console.log(`error: ${e}`) // eslint-disable-line no-console
+    // TODO: log error
+    console.log(`error: ${e.message}`) // eslint-disable-line no-console
   }
 }
 
+function* watchWatchlist() {
+  yield* takeLatest(userActions.TOGGLE_POKEMON, saveWatchlist)
+}
+
+function* loadUser() {
+  try {
+    const savedWatchlist = yield localStorage.watchlist.get()
+    if (savedWatchlist) {
+      yield put(userActions.updateWatchlist(savedWatchlist))
+    }
+    else {
+      console.log('No saved watchlist')
+    }
+  } catch (e) {
+    // TODO: log error
+    console.log(`error: ${e.message}`)
+  }
+}
+
+
 function* watchUser() {
-  yield* takeLatest(userActions.TOGGLE_POKEMON, localStoreWatched)
+  yield *takeLatest(userActions.LOAD_USER, loadUser)
 }
 
 export default function* root() {
   yield fork(watchUser)
+  yield fork(watchWatchlist)
   yield fork(watchLocation)
 }
