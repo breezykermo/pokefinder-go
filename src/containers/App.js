@@ -3,6 +3,7 @@ import {
   View,
 } from 'react-native'
 import { connect } from 'react-redux'
+import { updateSearch } from '../reducers/user/actions'
 import styles from './App.styles.js'
 import GeoLoc from '../components/GeoLoc'
 import Topbar from '../components/Topbar'
@@ -27,19 +28,24 @@ class App extends React.Component {
   }
 
   onSearchHandler(text) {
-    console.log(text)
+    this.props.dispatch(updateSearch(text))
   }
 
   render() {
     const { dispatch, user, pokemon } = this.props
-    console.log(user.watchlist)
     return (
       <View style={styles.container}>
         <GeoLoc dispatch={dispatch} />
         <Topbar onChangeTextHandler={this.onSearchHandler} />
         <BodyHeader watchlistCount={user.watchlist.length || 0} />
         <PokemonGrid
-          pokemonData={getWatched(pokemon.data, user.watchlist)}
+          pokemonData={
+            getWatched(pokemon.data, user.watchlist)
+              .filter(poke => {
+                if (user.search.length < 1) return true
+                return (poke.name.search(user.search) !== -1)
+              })
+          }
           dispatch={dispatch}
         />
       </View>

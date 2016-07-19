@@ -1,10 +1,9 @@
 import defaultState from './defaultState'
-import { TOGGLE_POKEMON } from './actions'
+import { TOGGLE_POKEMON, UPDATE_SEARCH } from './actions'
 
 export default (state = defaultState, action) => {
   switch (action.type) {
     case TOGGLE_POKEMON: {
-      console.log('Toggling pokemon ')
       const watchlist = state.get('watchlist')
       let newState
       const ind = watchlist.toJS().indexOf(action.id)
@@ -14,6 +13,10 @@ export default (state = defaultState, action) => {
         newState = state.set('watchlist', watchlist.push(action.id))
       }
       return newState
+    }
+
+    case UPDATE_SEARCH: {
+      return state.set('search', action.search)
     }
 
     default:
