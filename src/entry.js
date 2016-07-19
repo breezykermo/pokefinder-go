@@ -6,14 +6,14 @@ import App from './containers/App'
 import { Provider } from 'react-redux'
 // sagas
 import configureStore, { sagaMiddleware } from './store/configureStore'
-import { location } from './reducers/sagas'
+import sagas from './reducers/sagas'
 
 export default function native() {
   // remove warnings overlay
   console.disableYellowBox = true // eslint-disable-line no-console
 
   const store = configureStore()
-  sagaMiddleware.run(location)
+  sagaMiddleware.run(sagas)
 
   const PokedexGo = () => (
     <Provider store={store} >
