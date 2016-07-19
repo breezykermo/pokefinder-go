@@ -1,23 +1,18 @@
 import defaultState from './defaultState'
-import { TOGGLE_POKEMON, UPDATE_SEARCH } from './actions'
+import { TOGGLE_POKEMON, UPDATE_SEARCH, UPDATE_WATCHLIST } from './actions'
+import { updatedWatchlist } from '../../utils'
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case TOGGLE_POKEMON: {
-      const pokeNo = action.id - 1
-      const watchlist = state.get('watchlist')
-      let newState
-      const ind = watchlist.toJS().indexOf(pokeNo)
-      if (ind !== -1) {
-        newState = state.set('watchlist', watchlist.delete(ind))
-      } else {
-        newState = state.set('watchlist', watchlist.push(pokeNo))
-      }
-      return newState
-    }
+    case TOGGLE_POKEMON:
+      console.log(updatedWatchlist(state, action).toJS())
+      return state.set('watchlist', updatedWatchlist(state, action))
 
     case UPDATE_SEARCH:
       return state.set('search', action.search)
+
+    case UPDATE_WATCHLIST:
+      return state // NB: just an indication that local storage was updated
 
     default:
       return state

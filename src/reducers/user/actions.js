@@ -9,3 +9,9 @@ export const updateSearch = search => ({
   type: UPDATE_SEARCH,
   search,
 })
+
+export const UPDATE_WATCHLIST = 'UPDATE_WATCHLIST'
+export const updateWatchlist = (watchlist) => ({
+  type: UPDATE_WATCHLIST,
+  watchlist,
+})

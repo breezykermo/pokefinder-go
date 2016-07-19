@@ -1,8 +1,10 @@
 import { takeEvery, takeLatest } from 'redux-saga' // eslint-disable-line no-unused-vars
 import { fork, call, put, select } from 'redux-saga/effects' // eslint-disable-line no-unused-vars
-import localStorage from '../api/local'
+
 import * as locationActions from './location/actions'
 import * as userActions from './user/actions'
+
+import localStorage from '../api/local'
 
 function* diffLocation(action) {
   try {
@@ -20,8 +22,12 @@ function* watchLocation() {
 
 function* localStoreWatched(action) {
   try {
-    const watched = yield select(state => state.user.get('watchlist'))
-    console.log(watched) // eslint-disable-line no-console
+    // NB: select pulls state AFTER action has been handled by reducer
+    const watchlist = yield select(state => state.user.get('watchlist'))
+    yield localStorage.watchlist.set(watchlist)
+    const savedWatchlist = yield localStorage.watchlist.get()
+    console.log(savedWatchlist)
+    yield put(userActions.updateWatchlist(savedWatchlist))
   } catch (e) {
     console.log(`error: ${e}`) // eslint-disable-line no-console
   }
