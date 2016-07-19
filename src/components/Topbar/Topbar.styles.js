@@ -1,4 +1,4 @@
-import { colors, text } from '../../common/constants'
+import { colors, text, sizes } from '../../common/constants'
 
 export default {
   container: {
@@ -10,4 +10,9 @@ export default {
     borderBottomColor: colors.DARK_EMPHASIS,
   },
   text: text.header,
+  searchbar: {
+    marginBottom: 20,
+    height: 25,
+    width: sizes.SCREEN_WIDTH - sizes.STATUS_BAR_PADDING,
+  },
 }

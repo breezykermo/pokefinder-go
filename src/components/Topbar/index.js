@@ -18,10 +18,18 @@ class Topbar extends React.Component {
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
         <Text style={styles.text}>{I18n.t('headerText')}</Text>
-        <SearchBar
-          ref="searchBar"
-          placeholder={I18n.t('searchMessage')}
-        />
+        <View style={styles.searchbar}>
+          <SearchBar
+            barStyle="default"
+            searchBarStyle="minimal"
+            barTintColor="white"
+            tintColor="white"
+            textColor="white"
+            hideBackground={false}
+            ref="searchBar"
+            placeholder={I18n.t('searchMessage')}
+          />
+        </View>
       </View>
     )
   }
