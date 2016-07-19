@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import {
   View,
   Text,
@@ -9,6 +9,9 @@ import SearchBar from 'react-native-search-bar'
 import styles from './Topbar.styles'
 
 class Topbar extends React.Component {
+  static propTypes = {
+    onChangeTextHandler: PropTypes.func.isRequired,
+  }
   componentDidMount() {
     this.refs.searchBar.focus()
   }
@@ -20,8 +23,11 @@ class Topbar extends React.Component {
         <Text style={styles.text}>{I18n.t('headerText')}</Text>
         <View style={styles.searchbar}>
           <SearchBar
+            onChangeText={this.props.onChangeTextHandler}
+            textFieldBackgroundColor="rgba(255,255,255,0.18)"
             barStyle="default"
             searchBarStyle="minimal"
+            barTintColor="white"
             barTintColor="white"
             tintColor="white"
             textColor="white"

@@ -1,5 +1,7 @@
 import { colors, text, sizes } from '../../common/constants'
 
+export const OPAQUE_WHITE = 'rgba(255,255,255,0.18)'
+
 export default {
   container: {
     justifyContent: 'center',
