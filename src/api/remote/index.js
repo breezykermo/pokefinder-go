@@ -1,5 +1,7 @@
-import queryForLocation from './queryForLocation'
+import pokecrewQuery from './pokecrewQuery'
+import pokeradarQuery from './pokeradarQuery'
 
 export default {
-  fetch: queryForLocation,
+  fetchPokecrew: pokecrewQuery,
+  fetchPokeradar: pokeradarQuery,
 }
