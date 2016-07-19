@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import {
   View,
 } from 'react-native'
+import codePush from 'react-native-code-push'
 import { connect } from 'react-redux'
 import { updateSearch } from '../reducers/user/actions'
 import styles from './App.styles.js'
@@ -25,6 +26,10 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.onSearchHandler = this.onSearchHandler.bind(this)
+  }
+
+  componentDidMount() {
+    codePush.sync()
   }
 
   onSearchHandler(text) {
