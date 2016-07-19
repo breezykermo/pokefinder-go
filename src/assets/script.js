@@ -1,3 +1,4 @@
+/* eslint-disable */
 var NationalPokedexNumbers = [{
     id: 1,
     name: "Bulbasaur"
@@ -452,7 +453,12 @@ var NationalPokedexNumbers = [{
 
 NationalPokedexNumbers.map(function(each) {
   each.number = each.id;
-  each.image = `./pokemon/${each.name.toLowerCase()}.png`;
+  var fill;
+  if (each.id < 10) {fill = '00' + each.id;}
+  else if (each.id < 100) {fill = '0' + each.id;}
+  else { fill = '' + each.id; }
+
+  each.image = `./pokemon/${fill}.png`;
   return each;
 })
 
