@@ -21,13 +21,22 @@ class App extends React.Component {
     user: { watchlist: 0 },
   }
 
+  constructor(props) {
+    super(props)
+    this.onSearchHandler = this.onSearchHandler.bind(this)
+  }
+
+  onSearchHandler(text) {
+    console.log(text)
+  }
+
   render() {
     const { dispatch, user, pokemon } = this.props
     console.log(user.watchlist)
     return (
       <View style={styles.container}>
         <GeoLoc dispatch={dispatch} />
-        <Topbar />
+        <Topbar onChangeTextHandler={this.onSearchHandler} />
         <BodyHeader watchlistCount={user.watchlist.length || 0} />
         <PokemonGrid
           pokemonData={getWatched(pokemon.data, user.watchlist)}
