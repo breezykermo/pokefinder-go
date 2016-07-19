@@ -72,7 +72,7 @@ function* watchUser() {
 }
 
 export default function* root() {
-  yield fork(testApi)
+  // yield fork(testApi)
 
   yield fork(watchUser)
   yield fork(watchWatchlist)
