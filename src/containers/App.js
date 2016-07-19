@@ -23,11 +23,12 @@ class App extends React.Component {
 
   render() {
     const { dispatch, user, pokemon } = this.props
+    console.log(user.watchlist)
     return (
       <View style={styles.container}>
         <GeoLoc dispatch={dispatch} />
         <Topbar />
-        <BodyHeader watchlistCount={user.watchlist.count || 0} />
+        <BodyHeader watchlistCount={user.watchlist.length || 0} />
         <PokemonGrid
           pokemonData={getWatched(pokemon.data, user.watchlist)}
           dispatch={dispatch}
