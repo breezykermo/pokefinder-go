@@ -5,6 +5,7 @@ import * as locationActions from '../location/actions'
 function* diffLocation(action) {
   try {
     // TODO: Put location logic here.
+
   } catch (e) {
     yield put(locationActions.diffLocationFailure(e.message))
   }
