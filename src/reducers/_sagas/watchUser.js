@@ -1,6 +1,7 @@
 import { takeLatest } from 'redux-saga'
 import { put } from 'redux-saga/effects'
 import * as userActions from '../user/actions'
+import localStorage from '../../api/local'
 
 function* loadUser() {
   try {

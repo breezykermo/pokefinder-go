@@ -6,7 +6,10 @@ import {
 import config from './config'
 import BackgroundGeolocation from 'react-native-background-geolocation'
 import PushNotification from 'react-native-push-notification'
-import { diffLocationRequest } from '../../reducers/location/actions'
+import {
+  updateCurrentLocation,
+  updateBackgroundLocationError,
+} from '../../reducers/location/actions'
 
 class GeoLoc extends React.Component {
   static propTypes = {
@@ -22,7 +25,19 @@ class GeoLoc extends React.Component {
     })
     AppState.addEventListener('change', this.onAppStateChange.bind(this))
     this.bgGeo.on('location', this.onBackgroundLocationChange.bind(this))
-    this.bgGeo.on('error', error => console.log(error))
+    this.bgGeo.on('error', this.onBackgroundLocationError.bind(this))
+    /* Start */
+    const bgGeo = this.bgGeo
+    const dispatch = this.props.dispatch
+    bgGeo.start(() => {
+      console.log('- [js] BackgroundGeolocation started successfully')
+      bgGeo.getCurrentPosition({ timeout: 30 }, location => {
+        console.log('- [js received current position: ', JSON.stringify(location))
+        dispatch(updateBackgroundLocationError(location))
+      }, error => {
+        dispatch(updateBackgroundLocationError(error))
+      })
+    })
     /* PushNotifications */
     PushNotification.configure(config.pushNotification)
   }
@@ -50,7 +65,11 @@ class GeoLoc extends React.Component {
     this.setState({
       position: location,
     })
-    this.props.dispatch(diffLocationRequest(location))
+    this.props.dispatch(updateCurrentLocation(location))
+  }
+
+  onBackgroundLocationError(error) {
+    this.props.dispatch(updateBackgroundLocationError(error))
   }
 
   render() {

@@ -4,4 +4,5 @@ export default fromJS({
     x: null,
     y: null,
   },
+  error: null,
 })

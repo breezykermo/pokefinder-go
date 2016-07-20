@@ -1,16 +1,30 @@
 import { takeLatest } from 'redux-saga'
-import { put } from 'redux-saga/effects'
+import { fork, put } from 'redux-saga/effects'
 import * as locationActions from '../location/actions'
 
-function* diffLocation(action) {
+function* locationUpdate({ location }) {
   try {
     // TODO: Put location logic here.
-
+    console.log('watchLocation saga: ', location)
   } catch (e) {
-    yield put(locationActions.diffLocationFailure(e.message))
+    yield put(locationActions.updateBackgroundLocationError(e.message))
   }
 }
 
+function* errorUpdate(action) {
+  try {
+    alert(`Location error: ${error}`)
+  } catch (e) {
+    console.log('No idea.')
+  }
+}
+
+
+function* watchLocationError() {
+  yield takeLatest(locationActions.UPDATE_BACKGROUND_LOCATION_ERROR, errorUpdate)
+}
+
 export default function* watchLocation() {
-  yield* takeLatest(locationActions.DIFF_LOCATION_REQUEST, diffLocation)
+  fork(watchLocationError)
+  yield* takeLatest(locationActions.UPDATE_CURRENT_LOCATION, locationUpdate)
 }
