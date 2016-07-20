@@ -6,17 +6,20 @@ import codePush from 'react-native-code-push'
 import { connect } from 'react-redux'
 import { updateSearch, loadUser } from '../reducers/user/actions'
 import styles from './App.styles.js'
+import LocationLog from '../components/LocationLog'
 import GeoLoc from '../components/GeoLoc'
 import Topbar from '../components/Topbar'
 import BodyHeader from '../components/BodyHeader'
 import PokemonGrid from '../components/PokemonGrid'
 import { getWatched } from '../utils'
+import features, { ifEnabled } from '../common/toggles'
 
 class App extends React.Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     user: PropTypes.object,
     pokemon: PropTypes.object,
+    location: PropTypes.object,
   }
 
   static defaultProps = {
@@ -38,7 +41,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { dispatch, user, pokemon } = this.props
+    const { dispatch, user, pokemon, location } = this.props
     return (
       <View style={styles.container}>
         <GeoLoc dispatch={dispatch} />
@@ -54,6 +57,9 @@ class App extends React.Component {
           }
           dispatch={dispatch}
         />
+        {ifEnabled(features.LOCATION_MONITORING, () => (
+          <LocationLog location={location} />
+        ))}
       </View>
     )
   }
@@ -63,5 +69,6 @@ export default connect(
   state => ({
     user: state.user.toJS(),
     pokemon: state.pokemon.toJS(),
+    location: state.location.toJS(),
   })
 )(App)

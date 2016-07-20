@@ -3,7 +3,7 @@ export default {
 }
 
 /** Simple feature toggles */
-export const toggle = (type, renderComponent) => {
+export const ifEnabled = (type, renderComponent) => {
   if (!type) return null
   return renderComponent()
 }
