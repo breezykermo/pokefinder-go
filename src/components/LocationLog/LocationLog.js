@@ -7,11 +7,14 @@ import styles from './LocationLog.styles'
 
 const LocationLog = props => (
   <View style={styles.container}>
-    <Text style={styles.text}>{props.aProp || 'LocationLog'}</Text>
+    <Text style={styles.text}>{'Location'}</Text>
+    <Text style={styles.body}>{`x: ${props.x || 'None'}`}</Text>
+    <Text style={styles.body}>{`y: ${props.y || 'None'}`}</Text>
   </View>
 )
 LocationLog.propTypes = {
-  aProp: PropTypes.string,
+  x: PropTypes.string,
+  y: PropTypes.string,
 }
 
 export default LocationLog

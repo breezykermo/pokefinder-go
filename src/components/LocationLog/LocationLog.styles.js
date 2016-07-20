@@ -6,12 +6,18 @@ export default {
     top: 20,
     right: 2,
     height: 80,
+    width: 150,
     backgroundColor: 'white',
     borderRadius: 6,
     padding: 2,
   },
   text: [text.detailHeaderRight, {
+    textAlign: 'center',
     paddingTop: -10,
     color: colors.RED,
+    marginBottom: -5,
+  }],
+  body: [text.pokemonName, {
+    padding: 2,
   }],
 }
