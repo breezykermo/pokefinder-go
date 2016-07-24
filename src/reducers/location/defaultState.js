@@ -1,8 +1,10 @@
 import { fromJS } from 'immutable'
 export default fromJS({
   current: {
-    x: null,
-    y: null,
+    coords: {
+      latitude: null,
+      longitude: null,
+    },
   },
   logs: {
     activityChange: null,

@@ -59,8 +59,8 @@ class App extends React.Component {
         />
         {ifEnabled(features.LOCATION_MONITORING, () => (
           <LocationLog
-            x={location.current.x}
-            y={location.current.y}
+            x={location.current.coords.latitude}
+            y={location.current.coords.longitude}
             logs={location.logs}
           />
         ))}
