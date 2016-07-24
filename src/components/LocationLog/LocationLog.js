@@ -19,7 +19,7 @@ const LocationLog = props => (
 LocationLog.propTypes = {
   x: PropTypes.string,
   y: PropTypes.string,
-  logs: PropTypes.string,
+  logs: PropTypes.object,
   onPressHandler: PropTypes.func,
 }
 
