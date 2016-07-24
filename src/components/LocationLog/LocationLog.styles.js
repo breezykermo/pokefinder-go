@@ -1,11 +1,11 @@
-import { text, colors } from '../../common/constants'
+import { text, colors, sizes } from '../../common/constants'
 
 export default {
   container: {
     position: 'absolute',
     top: 20,
     right: 2,
-    height: 150,
+    height: sizes.SCREEN_HEIGHT,
     width: 250,
     backgroundColor: 'white',
     borderRadius: 6,

@@ -4,7 +4,7 @@ export default fromJS({
     x: null,
     y: null,
   },
-  log: {
+  logs: {
     activityChange: null,
     heartbeat: null,
     motionChange: null,

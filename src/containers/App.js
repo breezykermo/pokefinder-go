@@ -61,7 +61,7 @@ class App extends React.Component {
           <LocationLog
             x={location.current.x}
             y={location.current.y}
-            error={location.error}
+            logs={location.logs}
           />
         ))}
       </View>
