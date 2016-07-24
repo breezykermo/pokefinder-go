@@ -34,7 +34,7 @@
   "dependencies": {
     "react": "^15.2.1",
     "react-native": "^0.29.1",
-    "react-native-background-geolocation": "^1.1.0",
+    "react-native-background-geolocation": "^1.2.0",
     "react-native-code-push": "^1.13.5-beta",
     "react-native-grid-view": "^0.4.1",
     "react-native-i18n": "0.0.8",

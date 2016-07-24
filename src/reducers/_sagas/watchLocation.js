@@ -13,7 +13,8 @@ function* locationUpdate({ location }) {
 
 function* errorUpdate(action) {
   try {
-    alert(`Location error: ${error}`)
+    const { type, code } = action.error
+    alert(`${type} Error: ${code}`)
   } catch (e) {
     console.log('No idea.')
   }
