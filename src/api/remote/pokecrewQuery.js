@@ -4,7 +4,7 @@ const POKECREW_API = 'https://api.pokecrew.com/api/v1/seens'
 
 export default (x, y) => {
   const loc = new GeoPoint(x, y)
-  // NB, query is approx. 1.415 km radius with this.
+  // NB, query is approx. 1.415 mile radius with this.
   const boundingCoordinates = loc.boundingCoordinates(1)
   const swLoc = boundingCoordinates[0]
   const neLoc = boundingCoordinates[1]

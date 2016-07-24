@@ -1,20 +1,26 @@
 import { takeLatest } from 'redux-saga'
-import * as userActions from '../user/actions'
+import { fork } from 'redux-saga/effects'
+import * as locationActions from '../location/actions'
 import remote from '../../api/remote'
 
 function* fetchPokemon() {
   try {
     const dt = yield remote.fetchPokecrew(37.79306534428667, -122.41104125976562)
     console.log('pokecrew', dt)
-    const data = yield remote.fetchPokeradar(37.78738059991135, -122.39927037277221)
-    console.log('pokeradar', data)
+    // const data = yield remote.fetchPokeradar(37.78738059991135, -122.39927037277221)
+    // console.log('pokeradar', data)
   } catch (e) {
     console.log(`error: ${e}`)
   }
 }
 
-function* testApi() {
-  yield* takeLatest(userActions.WATCHLIST_SAVED, fetchPokemon)
+function* watchHeartbeat() {
+  yield* takeLatest(locationActions.LOG_HEARTBEAT_EVENT, fetchPokemon)
 }
 
-export default testApi
+function* watchApi() {
+  fork(watchHeartbeat)
+  yield* takeLatest(locationActions.UPDATE_CURRENT_LOCATION, fetchPokemon)
+}
+
+export default watchApi

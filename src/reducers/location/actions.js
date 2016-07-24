@@ -4,7 +4,6 @@ export const updateCurrentLocation = (location) => ({
   location,
 })
 
-
 export const LOG_ACTIVITY_CHANGE_EVENT = 'LOG_ACTIVITY_CHANGE_EVENT'
 export const logActivityChangeEvent = (log) => ({
   type: LOG_ACTIVITY_CHANGE_EVENT,

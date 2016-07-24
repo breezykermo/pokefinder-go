@@ -18,20 +18,20 @@ class GeoLoc extends React.Component {
     /* Background Geolocation */
     BackgroundGeolocation.configure({
       desiredAccuracy: 0,
-      stationaryRadius: 50,
-      distanceFilter: 100,
+      stationaryRadius: 10,
+      distanceFilter: 10,
       disableElasticity: false, // <-- [iOS] Default is 'false'.  Set true to disable speed-based distanceFilter elasticity
-      locationUpdateInterval: 200,
+      locationUpdateInterval: 10,
       minimumActivityRecognitionConfidence: 80,   // 0-100%.  Minimum activity-confidence for a state-change
-      fastestLocationUpdateInterval: 5000,
-      activityRecognitionInterval: 30,
+      // fastestLocationUpdateInterval: 5000,
+      activityRecognitionInterval: 10000,
       stopDetectionDelay: 1,  // <--  minutes to delay after motion stops before engaging stop-detection system
       stopTimeout: 2, // 2 minutes
       activityType: 'AutomotiveNavigation',
 
       pausesLocationUpdatesAutomatically: false, // NB: only for stationary testing
       preventSuspend: true,
-      heartbeatInterval: 10,
+      heartbeatInterval: 10000,
 
       // Application config
       debug: true, // <-- enable this hear sounds for background-geolocation life-cycle.
@@ -41,16 +41,16 @@ class GeoLoc extends React.Component {
       stopOnTerminate: false,              // <-- Allow the background-service to continue tracking when user closes the app.
       startOnBoot: true,                   // <-- Auto start tracking when device is powered-up.
       // HTTP / SQLite config
-      // url: 'http://posttestserver.com/post.php?dir=cordova-background-geolocation',
-      // batchSync: false,       // <-- [Default: false] Set true to sync locations to server in a single HTTP request.
-      // autoSync: true,         // <-- [Default: true] Set true to sync each location to server as it arrives.
-      // maxDaysToPersist: 1,    // <-- Maximum days to persist a location in plugin's SQLite database when HTTP fails
-      // headers: {
-      //   'X-FOO': 'bar',
-      // },
-      // params: {
-      //   auth_token: 'maybe_your_server_authenticates_via_token_YES?',
-      // },
+      url: 'http://posttestserver.com/post.php?dir=cordova-background-geolocation',
+      batchSync: false,       // <-- [Default: false] Set true to sync locations to server in a single HTTP request.
+      autoSync: true,         // <-- [Default: true] Set true to sync each location to server as it arrives.
+      maxDaysToPersist: 1,    // <-- Maximum days to persist a location in plugin's SQLite database when HTTP fails
+      headers: {
+        'X-FOO': 'bar',
+      },
+      params: {
+        auth_token: 'maybe_your_server_authenticates_via_token_YES?',
+      },
     }, state => {
       console.log('- BackgroundGeolocation is configured and ready: ', state.enabled)
 
