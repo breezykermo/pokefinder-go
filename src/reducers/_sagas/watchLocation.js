@@ -7,7 +7,7 @@ function* locationUpdate({ location }) {
     // TODO: Put location logic here.
     console.log('watchLocation saga: ', location)
   } catch (e) {
-    yield put(locationActions.updateBackgroundLocationError(e.message))
+    yield put(locationActions.longErrorEvent(e.message))
   }
 }
 
@@ -22,7 +22,7 @@ function* errorUpdate(action) {
 
 
 function* watchLocationError() {
-  yield takeLatest(locationActions.UPDATE_BACKGROUND_LOCATION_ERROR, errorUpdate)
+  yield takeLatest(locationActions.LOG_ERROR_EVENT, errorUpdate)
 }
 
 export default function* watchLocation() {

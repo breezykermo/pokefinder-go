@@ -1,6 +1,6 @@
 import GeoPoint from './GeoPoint'
 
-const POKERADAR_API = 'http://www.pokemonradargo.com/api/v1/submissions'
+const POKERADAR_API = 'https://www.pokemonradargo.com/api/v1/submissions'
 
 export default (x, y) => {
   const loc = new GeoPoint(x, y)

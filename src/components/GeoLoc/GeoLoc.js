@@ -113,14 +113,7 @@ class GeoLoc extends React.Component {
 
   onBackgroundLocationChange(location) {
     console.log('location event triggered:', location) // eslint-disable-line no-console
-    this.setState({
-      position: location,
-    })
-    this.props.dispatch(updateCurrentLocation(location))
-  }
-
-  onBackgroundLocationError(error) {
-    this.props.dispatch(updateBackgroundLocationError(error))
+    this.props.dispatch(act.updateCurrentLocation(location))
   }
 
   render() {
