@@ -2,6 +2,9 @@
 
 Subscribe to Pokemon, and get notified when the Pokemon you are watching have appeared in your area. The app is made using React Native and Redux, and has only been tested on iOS. It uses [Redux Saga](https://github.com/yelouafi/redux-saga) for asynchronous operations, and the [Pokecrew](https://www.pokecrew.com/) API ([just in case](https://fevgames.net/walking-a-dangerous-line-pokemon-go-and-unofficial-api-projects/)).
 
+![Pokemon Pic 1](/assets/sceen1.png)
+![Pokemon Pic 2](/assets/sceen2.png)
+
 ## Getting Started
 
 Ensure that you have [React Native](https://facebook.github.io/react-native/) installed on your computer. Follow the [Getting Started](https://facebook.github.io/react-native/docs/getting-started.html#content) docs on their website if not.
