@@ -27,3 +27,8 @@ npm run debug:ios:6
 ## Addendum
 
 This is a work in progress. I haven't yet been able to sync up Background Geolocation and API querying, nor properly trigger push notifications. The infrastructure is all there, but the connective tissue isn't quite. Feel free to pull request! I don't actually play PokemonGo (just making this for my sister), so this is not one of my major priorities right now.
+
+**HUGE** credit to:
+
+ - [Mariam Braimah](https://twitter.com/mbraimah_), who designed the interface.
+ - [Jake Brady](https://www.linkedin.com/in/jacobbrady), who helped brainstorm the concept and hash out some of the code.
