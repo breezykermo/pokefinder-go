@@ -5,6 +5,8 @@ Subscribe to Pokemon, and get notified when the Pokemon you are watching have ap
 ![Pokemon Pic 1](/assets/screen1.png)
 ![Pokemon Pic 2](/assets/screen2.png)
 
+See the very compelling [Powerpoint Presentation](https://docs.google.com/presentation/d/1WSPHb8pvFU1a2U04RjQly76gqdXCYcvjyJylkXPKdQ0/edit#slide=id.g15f19ec232_0_165) for more info.
+
 ## Getting Started
 
 Ensure that you have [React Native](https://facebook.github.io/react-native/) installed on your computer. Follow the [Getting Started](https://facebook.github.io/react-native/docs/getting-started.html#content) docs on their website if not.
