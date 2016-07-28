@@ -5,5 +5,5 @@ export const ifEnabled = (type, renderComponent) => {
 }
 
 export default {
-  LOCATION_MONITORING: true,
+  LOCATION_MONITORING: false,
 }

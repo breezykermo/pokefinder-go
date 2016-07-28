@@ -15,11 +15,11 @@ export default function native() {
   const store = configureStore()
   sagaMiddleware.run(sagas)
 
-  const PokedexGo = () => (
+  const PokefinderGo = () => (
     <Provider store={store} >
       <App />
     </Provider>
   )
 
-  AppRegistry.registerComponent('PokedexGo', () => PokedexGo)
+  AppRegistry.registerComponent('PokefinderGo', () => PokefinderGo)
 }

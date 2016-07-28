@@ -9,11 +9,11 @@ function* loadUser() {
     if (savedWatchlist) {
       yield put(userActions.updateWatchlist(savedWatchlist))
     } else {
-      console.log('No saved watchlist')
+      console.log('No saved watchlist') // eslint-disable-line no-console
     }
   } catch (e) {
     // TODO: log error
-    console.log(`error: ${e.message}`)
+    console.log(`error: ${e.message}`) // eslint-disable-line no-console
   }
 }
 

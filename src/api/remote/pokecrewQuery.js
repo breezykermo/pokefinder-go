@@ -10,9 +10,11 @@ export default (x, y) => {
   const neLoc = boundingCoordinates[1]
 
   return Promise.resolve()
-    .then(() => {
-      console.log(`${POKECREW_API}?center_latitude=${loc.latitude()}&center_longitude=${loc.longitude()}&southwest_latitude=${swLoc.latitude()}&southwest_longitude=${swLoc.longitude()}&northeast_latitude=${neLoc.latitude()}&northeast_longitude=${neLoc.longitude()}&live=true&minimal=true&pokemon_id=`)
-      return fetch(`${POKECREW_API}?center_latitude=${loc.latitude()}&center_longitude=${loc.longitude()}&southwest_latitude=${swLoc.latitude()}&southwest_longitude=${swLoc.longitude()}&northeast_latitude=${neLoc.latitude()}&northeast_longitude=${neLoc.longitude()}&live=true&minimal=true&pokemon_id=`)
-    }).then(response => response.json())
+    .then(() => (
+      /* eslint-disable max-len */
+      // console.log(`${POKECREW_API}?center_latitude=${loc.latitude()}&center_longitude=${loc.longitude()}&southwest_latitude=${swLoc.latitude()}&southwest_longitude=${swLoc.longitude()}&northeast_latitude=${neLoc.latitude()}&northeast_longitude=${neLoc.longitude()}&live=true&minimal=true&pokemon_id=`)
+      fetch(`${POKECREW_API}?center_latitude=${loc.latitude()}&center_longitude=${loc.longitude()}&southwest_latitude=${swLoc.latitude()}&southwest_longitude=${swLoc.longitude()}&northeast_latitude=${neLoc.latitude()}&northeast_longitude=${neLoc.longitude()}&live=true&minimal=true&pokemon_id=`)
+      /* eslint-enable max-len */
+    )).then(response => response.json())
     .then(pokecrewData => pokecrewData)
 }

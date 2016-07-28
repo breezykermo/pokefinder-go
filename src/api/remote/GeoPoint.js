@@ -1,4 +1,4 @@
-{/**
+/**
 * Represents a point on the surface of the Earth.
 *
 * This library is derived from the Java code originally published at
@@ -214,4 +214,4 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = GeoPoint;
 } else {
   this.GeoPoint = GeoPoint;
-}}
+}

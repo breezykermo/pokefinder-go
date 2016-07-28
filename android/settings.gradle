@@ -1,4 +1,4 @@
-rootProject.name = 'PokedexGo'
+rootProject.name = 'PokefinderGo'
 
 include ':app'
 include ':react-native-code-push'

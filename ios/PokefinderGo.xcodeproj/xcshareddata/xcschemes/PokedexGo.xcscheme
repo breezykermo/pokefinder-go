@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "PokedexGo.app"
-               BlueprintName = "PokedexGo"
-               ReferencedContainer = "container:PokedexGo.xcodeproj">
+               BuildableName = "PokefinderGo.app"
+               BlueprintName = "PokefinderGo"
+               ReferencedContainer = "container:PokefinderGo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "PokedexGoTests.xctest"
-               BlueprintName = "PokedexGoTests"
-               ReferencedContainer = "container:PokedexGo.xcodeproj">
+               BuildableName = "PokefinderGo.xctest"
+               BlueprintName = "PokefinderGoTests"
+               ReferencedContainer = "container:PokefinderGo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "PokedexGo.app"
-            BlueprintName = "PokedexGo"
-            ReferencedContainer = "container:PokedexGo.xcodeproj">
+            BuildableName = "PokefinderGo.app"
+            BlueprintName = "PokefinderGo"
+            ReferencedContainer = "container:PokefinderGo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "PokedexGo.app"
-            BlueprintName = "PokedexGo"
-            ReferencedContainer = "container:PokedexGo.xcodeproj">
+            BuildableName = "PokefinderGo.app"
+            BlueprintName = "PokefinderGo"
+            ReferencedContainer = "container:PokefinderGo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "PokedexGo.app"
-            BlueprintName = "PokedexGo"
-            ReferencedContainer = "container:PokedexGo.xcodeproj">
+            BuildableName = "PokefinderGo.app"
+            BlueprintName = "PokefinderGo"
+            ReferencedContainer = "container:PokefinderGo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -5,7 +5,7 @@ import * as locationActions from '../location/actions'
 function* locationUpdate({ location }) {
   try {
     // TODO: Put location logic here.
-    console.log('watchLocation saga: ', location)
+    console.log('watchLocation saga: ', location) // eslint-disable-line no-console
   } catch (e) {
     yield put(locationActions.longErrorEvent(e.message))
   }
@@ -14,9 +14,9 @@ function* locationUpdate({ location }) {
 function* errorUpdate(action) {
   try {
     const { type, code } = action.error
-    alert(`${type} Error: ${code}`)
+    alert(`${type} Error: ${code}`) // eslint-disable-line no-alert
   } catch (e) {
-    console.log('No idea.')
+    console.log('No idea.') // eslint-disable-line no-console
   }
 }
 

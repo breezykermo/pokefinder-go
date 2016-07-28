@@ -1,4 +1,4 @@
-package com.PokedexGo;
+package com.PokefinderGo;
 
 import android.app.Application;
 import android.util.Log;

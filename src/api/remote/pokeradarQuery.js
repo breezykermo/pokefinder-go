@@ -10,10 +10,11 @@ export default (x, y) => {
 
   return Promise.resolve()
     .then(() => (
-      // NB: hardcode a hack ID, seems to work better
+      /* eslint-disable max-len */
       fetch(`${POKERADAR_API}?minLatitude=${swLoc.latitude()}&minLongitude=${swLoc.longitude()}&maxLatitude=${neLoc.latitude()}&maxLongitude=${neLoc.longitude()}&pokemonId=0`, {
         method: 'GET',
       })
+      /* eslint-enable max-len */
     )).then(response => response.json())
     .then(pokeradarData => pokeradarData)
 }

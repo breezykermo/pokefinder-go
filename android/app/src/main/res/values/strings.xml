@@ -1,4 +1,4 @@
 <resources>
     <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">1fX6VpZIzTwiZiLCJREcBeReIfH9V1NPlr4VW</string>
-    <string name="app_name">PokedexGo</string>
+    <string name="app_name">PokefinderGo</string>
 </resources>

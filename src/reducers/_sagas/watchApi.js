@@ -6,11 +6,11 @@ import remote from '../../api/remote'
 function* fetchPokemon() {
   try {
     const dt = yield remote.fetchPokecrew(37.79306534428667, -122.41104125976562)
-    console.log('pokecrew', dt)
+    console.log('pokecrew', dt) // eslint-disable-line no-console
     // const data = yield remote.fetchPokeradar(37.78738059991135, -122.39927037277221)
     // console.log('pokeradar', data)
   } catch (e) {
-    console.log(`error: ${e}`)
+    console.log(`error: ${e}`) // eslint-disable-line no-console
   }
 }
 

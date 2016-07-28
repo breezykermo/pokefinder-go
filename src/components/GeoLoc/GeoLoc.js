@@ -23,15 +23,15 @@ class GeoLoc extends React.Component {
       disableElasticity: false, // <-- [iOS] Default is 'false'.  Set true to disable speed-based distanceFilter elasticity
       locationUpdateInterval: 10,
       minimumActivityRecognitionConfidence: 80,   // 0-100%.  Minimum activity-confidence for a state-change
-      // fastestLocationUpdateInterval: 5000,
+      fastestLocationUpdateInterval: 5000,
       activityRecognitionInterval: 10000,
       stopDetectionDelay: 1,  // <--  minutes to delay after motion stops before engaging stop-detection system
       stopTimeout: 2, // 2 minutes
       activityType: 'AutomotiveNavigation',
 
-      pausesLocationUpdatesAutomatically: false, // NB: only for stationary testing
-      preventSuspend: true,
-      heartbeatInterval: 10000,
+      // pausesLocationUpdatesAutomatically: false, // NB: only for stationary testing
+      // preventSuspend: true,
+      // heartbeatInterval: 10000,
 
       // Application config
       debug: true, // <-- enable this hear sounds for background-geolocation life-cycle.
